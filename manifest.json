@@ -1,0 +1,7 @@
+{
+  "name": "Djentronome",
+  "start_url": "/",
+  "background_color": "#fff",
+  "display": "standalone",
+  "theme_color": "#212121"
+}

@@ -1,0 +1,23 @@
+<template>
+  <header class="header">
+    <div class="h-inner">
+      <span class="h-title">Djentronome</span>
+    </div>
+  </header>
+</template>
+
+<style lang="stylus" scoped>
+.header
+  width 100%
+  height 60px
+  padding 1rem
+  background-color #212121
+  color #fff
+  z-index 4
+  .h-inner
+    width 768px
+    margin 0 auto
+  .h-title
+    font-size 22px
+    line-height 22px
+</style>
