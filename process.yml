@@ -1,0 +1,7 @@
+apps:
+  - script: 'server.js'
+    name: 'djentronome-app'
+    exec_mode: 'cluster'
+    instances: 1
+    env:
+      NODE_ENV: production
