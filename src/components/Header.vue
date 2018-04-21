@@ -17,6 +17,8 @@
   .h-inner
     width 768px
     margin 0 auto
+    @media screen and (max-width: 768px)
+      width 100%
   .h-title
     font-size 22px
     line-height 22px

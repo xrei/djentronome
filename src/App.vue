@@ -1,26 +1,16 @@
 <template>
   <div id="app">
-    <Header/>
     <router-view/>
   </div>
 </template>
-
-<script>
-import Header from './components/Header.vue'
-
-export default {
-  components: {
-    Header
-  }
-}
-</script>
-
 <style lang="stylus">
 
 *
   box-sizing border-box
   margin 0
   padding 0
+  &:before, &:after
+    box-sizing: inherit
 
 html, body
   width 100%
@@ -34,10 +24,6 @@ body
   font-family 'Open Sans', Arial, Helvetica,sans-serif
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
-
-#app
-  // width 100%
-  // height 100vh
 
 .flex-row
   display flex

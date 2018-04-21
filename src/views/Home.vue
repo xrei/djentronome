@@ -1,15 +1,19 @@
 <template>
-  <div class="container">
-    <Metronome/>
+  <div class="">
+    <Header/>
+    <div class="container">
+      <Metronome/>
+    </div>
   </div>
 </template>
 
 <script>
 import Metronome from '../components/Metronome/Metronome.vue'
+import Header from '../components/Header.vue'
 
 export default {
   components: {
-    Metronome
+    Metronome, Header
   }
 }
 
@@ -18,7 +22,10 @@ export default {
 <style scoped lang="stylus">
 
 .container
-  max-width 768px
+  width 768px
   margin 0 auto
+  @media screen and (max-width: 767px)
+    width auto
+    height calc(100vh - 60px)
 
 </style>
