@@ -25,6 +25,10 @@ body
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
 
+a
+  color #3d5afe
+  text-decoration none
+
 .flex-row
   display flex
   flex-flow row

@@ -1,23 +1,29 @@
 <template>
   <main class="app-metronome">
-    <div class="metronome-beat">
-      {{ beat }}
+    <div class="metronome-inner">
+      <div class="metronome-beat">
+        {{ beat }}
+      </div>
+      <Metronome-dots
+        :beat="beat"
+        :dots="timeBars"
+      />
+      <MetronomeBpm
+        :bpm="bpm"
+        @bpmChanged="updateBpm"
+        @signatureChanged="updateSignature"
+        @volChanged="updateVolume"
+        @beatTypeChanged="updateBeatType"
+      />
+      <Btn class="btn_color"
+        :class="started ? 'btn-color_r' : 'btn_color_g'"
+        @click="toggleStart()"
+      >{{ started ? 'Stop' : 'Play '}}</Btn>
     </div>
-    <Metronome-dots
-      :beat="beat"
-      :dots="timeBars"
-    />
-    <MetronomeBpm
-      :bpm="bpm"
-      @bpmChanged="updateBpm"
-      @signatureChanged="updateSignature"
-      @volChanged="updateVolume"
-      @beatTypeChanged="updateBeatType"
-    />
-    <Btn class="btn_color"
-      :class="started ? 'btn-color_r' : 'btn_color_g'"
-      @click="toggleStart()"
-    >{{ started ? 'Stop' : 'Play '}}</Btn>
+    <div class="author-cont">
+      <a href="https://github.com/xrei/">&copy; Rei</a>
+      <a href="https://github.com/xrei/djentronome" title="Github">Source code</a>
+    </div>
   </main>
 </template>
 
