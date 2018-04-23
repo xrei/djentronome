@@ -4,6 +4,7 @@ import App from './App.vue'
 import { createStore } from './store'
 import { createRouter } from './router'
 import { sync } from 'vuex-router-sync'
+import ga from './ga'
 
 Vue.use(Meta)
 
@@ -12,6 +13,8 @@ export function createApp () {
   const router = createRouter()
 
   sync(store, router)
+
+  ga()
 
   const app = new Vue({
     metaInfo: {
