@@ -18,7 +18,7 @@ module.exports = merge(base, {
     }
   },
   externals: nodeExternals({
-    whitelist: /\.css$/
+    whitelist: [/\.css$/, /\?vue&type=style/]
   }),
   plugins: [
     new webpack.DefinePlugin({
