@@ -8,11 +8,6 @@ const config = merge(base, {
   entry: {
     app: './src/entry-client.js'
   },
-  resolve: {
-    alias: {
-      //
-    }
-  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
@@ -47,7 +42,7 @@ if (process.env.NODE_ENV === 'production') {
         {
           urlPattern: '/',
           handler: 'networkFirst'
-        },
+        }
       ]
     })
   )

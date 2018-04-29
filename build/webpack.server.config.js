@@ -12,11 +12,6 @@ module.exports = merge(base, {
     filename: 'server-bundle.js',
     libraryTarget: 'commonjs2'
   },
-  resolve: {
-    alias: {
-      //
-    }
-  },
   externals: nodeExternals({
     whitelist: [/\.css$/, /\?vue&type=style/]
   }),
