@@ -18,12 +18,12 @@ export function createApp () {
 
   const app = new Vue({
     metaInfo: {
-      title: 'Metronome',
+      title: 'Djentronome',
       meta: [
-        { name: 'description', content: 'Free online metronome app for practice with support of odd time signatures' },
+        // { name: 'description', content: 'Free online metronome app for practice with support of odd time signatures' },
         { name: 'keywords', content: 'metronome, djentronome, app, online, timing, practice, guitar, music, vue' }
       ],
-      titleTemplate: '%s | Djentronome',
+      titleTemplate: '%s | Free online metronome',
       htmlAttrs: {
         lang: 'en'
       }
