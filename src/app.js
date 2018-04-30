@@ -20,7 +20,7 @@ export function createApp () {
     metaInfo: {
       title: 'Metronome',
       meta: [
-        { vmid: 'description', name: 'description', content: 'Free online metronome app for practice with support of odd time signatures' },
+        { name: 'description', content: 'Free online metronome app for practice with support of odd time signatures' },
         { name: 'keywords', content: 'metronome, djentronome, app, online, timing, practice, guitar, music, vue' }
       ],
       titleTemplate: '%s | Djentronome',
