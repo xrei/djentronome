@@ -11,7 +11,7 @@
   width 100%
   height 60px
   padding 1rem
-  background-color #212121
+  background-color #000
   color #fff
   z-index 4
   .h-inner
@@ -20,6 +20,6 @@
     @media screen and (max-width: 768px)
       width 100%
   .h-title
-    font-size 22px
-    line-height 22px
+    font-size 28px
+    line-height 28px
 </style>

@@ -20,10 +20,6 @@
         @click="toggleStart()"
       >{{ started ? 'Stop' : 'Play '}}</Btn>
     </div>
-    <div class="author-cont">
-      <a href="https://github.com/xrei/">&copy; Rei</a>
-      <a href="https://github.com/xrei/djentronome" title="Github">Source code</a>
-    </div>
   </main>
 </template>
 

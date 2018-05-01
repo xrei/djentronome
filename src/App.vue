@@ -18,9 +18,8 @@ html, body
 
 body
   color #212121
-  background #fff
   line-height 1.5
-  background-color #eee
+  background-color #212121
   font-family 'Open Sans', Arial, Helvetica,sans-serif
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
@@ -28,6 +27,10 @@ body
 a
   color #3d5afe
   text-decoration none
+
+#app
+  width 100%
+  height 100%
 
 .flex-row
   display flex
