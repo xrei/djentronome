@@ -27,6 +27,7 @@
 import Btn from '../Button/Button.vue'
 import MetronomeDots from './MetronomeDots.vue'
 import MetronomeBpm from './MetronomeBpm.vue'
+import { changeFreq, convertBpm } from '../../utils'
 
 let audio, tick, tickGain
 
@@ -35,24 +36,6 @@ if (process.browser) {
 
   tick = audio.createOscillator()
   tickGain = audio.createGain()
-}
-
-function changeFreq (ctx, frq, now) {
-  return ctx.frequency.setValueAtTime(frq, 0)
-}
-
-function convertBpm (bpm, beat) {
-  const noteDurations = {
-    1: bpm / 4,
-    2: bpm / 2,
-    4: bpm,
-    8: bpm * 2,
-    16: bpm * 4,
-    32: bpm * 8
-  }
-  const ms = (60000 / noteDurations[beat])
-
-  return ms
 }
 
 export default {
