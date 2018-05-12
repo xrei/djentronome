@@ -47,7 +47,7 @@ export default {
     timeBars: 4,
     volume: 1
   }),
-  mounted () {
+  beforeMount () {
     this.init()
   },
   methods: {
@@ -78,6 +78,8 @@ export default {
       let interval = convertBpm(this.bpm, this.beatType)
       let now = audio.currentTime
 
+      audio.resume()
+
       tickGain.gain.cancelScheduledValues(now)
       tickGain.gain.setValueAtTime(0, now)
 
@@ -104,7 +106,7 @@ export default {
     },
     init () {
       tick.type = 'square'
-      tick.frequency.setValueAtTime(2500, 0)
+      tick.frequency.setValueAtTime(1300, 0)
       tickGain.gain.setValueAtTime(0, 0)
       tick.connect(tickGain)
       tickGain.connect(audio.destination)
