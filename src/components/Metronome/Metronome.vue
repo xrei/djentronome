@@ -28,15 +28,10 @@ import Btn from '../Button/Button.vue'
 import MetronomeDots from './MetronomeDots.vue'
 import MetronomeBpm from './MetronomeBpm.vue'
 import { changeFreq, convertBpm } from '../../utils'
+import AuidoApi from './AudioApi'
 
-let audio, tick, tickGain
-
-if (process.browser) {
-  audio = new (window.AudioContext || window.webkitAudioContext)()
-
-  tick = audio.createOscillator()
-  tickGain = audio.createGain()
-}
+// make sure that we initialize it in browser, not on server-side because node doesn't have audio api.
+if (process.browser) var { audio, tick, tickGain } = AuidoApi()
 
 export default {
   components: {
