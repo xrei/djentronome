@@ -21,7 +21,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'ui-slider',
   props: {
@@ -78,7 +77,7 @@ export default {
       }
     }
   },
-  created () {
+  mounted () {
     this.handleDragMouseMove = this.handleDragMouseMove.bind(this)
     this.handleMouseEnd = this.handleMouseEnd.bind(this)
     this.handleTouchMove = this.handleTouchMove.bind(this)
@@ -132,7 +131,6 @@ export default {
       if (this.disabled) return
       this.hover = false
     },
-
     setValue (e) {
       const { $el, max, min, step } = this
       let val = (e.clientX - $el.getBoundingClientRect().left) / $el.offsetWidth * (max - min)
@@ -146,7 +144,6 @@ export default {
       this.inputValue = val
       this.$emit('change', val)
     },
-
     onDragStart (e) {
       this.dragging = true
       this.active = true
