@@ -32,22 +32,25 @@
       >BPM</app-input>
     </div>
     <div class="flex-row bpm-slider">
-      <label for="">Bpm</label>
-      <input type="range" min="1" max="300" v-model.number="lazyBpm"/>
+      <Slider :min="1" :max="300" :step="1" v-model.number="lazyBpm">
+        BPM
+      </Slider>
     </div>
-    <div class="flex-row">
-      <label for="">Volume</label>
-      <input type="range" min="0.1" max="1" step="0.1" v-model.number="vol"/>
+    <div class="flex-row bpm-slider">
+      <Slider :min="0.1" :max="1" :step="0.1" v-model.number="vol">
+        Volume
+      </Slider>
     </div>
   </section>
 </template>
 
 <script>
 import AppInput from '../Input/InputField.vue'
+import Slider from '../InputSlider/Slider.vue'
 
 export default {
   components: {
-    AppInput
+    AppInput, Slider
   },
   props: {
     bpm: {
@@ -95,6 +98,9 @@ export default {
     width 320px
 .bpm-input
   width 60px !important
+
+.bpm-slider
+  width 100%
 
 .signature-selects
   display flex

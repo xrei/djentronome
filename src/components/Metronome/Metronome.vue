@@ -82,7 +82,6 @@ export default {
 
       tickGain.gain.cancelScheduledValues(now)
       tickGain.gain.setValueAtTime(0, now)
-
       tickGain.gain.linearRampToValueAtTime(this.volume, now + .001)
       tickGain.gain.linearRampToValueAtTime(0, now + .001 + 0.01)
 

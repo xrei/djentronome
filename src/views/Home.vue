@@ -17,7 +17,8 @@ import Header from '../components/Header.vue'
 
 export default {
   components: {
-    Metronome, Header
+    Metronome,
+    Header
   }
 }
 
