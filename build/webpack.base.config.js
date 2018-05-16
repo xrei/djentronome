@@ -92,7 +92,13 @@ module.exports = {
     ? [
       new VueLoaderPlugin(),
       new UglifyJsPlugin({
-        parallel: 4
+        parallel: true,
+        uglifyOptions: {
+          ecma: 6,
+          compress: {
+            ecma: 6
+          }
+        }
       }),
 
       new webpack.optimize.ModuleConcatenationPlugin(),
