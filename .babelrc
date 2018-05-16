@@ -2,7 +2,10 @@
   "presets": [
     ["env", {
       "modules": false,
-      "loose": true
+      "loose": true,
+      "targets": {
+        "node": "current"
+      }
     }],
     "stage-2"
   ],

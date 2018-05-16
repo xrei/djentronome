@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -90,9 +91,10 @@ module.exports = {
   plugins: isProd
     ? [
       new VueLoaderPlugin(),
-      new webpack.optimize.UglifyJsPlugin({
-        compress: { warnings: false }
+      new UglifyJsPlugin({
+        parallel: 4
       }),
+
       new webpack.optimize.ModuleConcatenationPlugin(),
       new ExtractTextPlugin({
         filename: 'common.[chunkhash].css'
