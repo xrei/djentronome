@@ -84,8 +84,15 @@ app.use(microcache.cacheSeconds(1, req => useMicroCache && req.originalUrl))
 function render (req, res) {
   const s = Date.now()
 
-  res.setHeader("Content-Type", "text/html")
-  res.setHeader("Server", serverInfo)
+  // check if this is dipshit ie!
+  const ie = req.headers['user-agent'].match('Trident/')
+  if (ie) {
+    res.sendFile(path.join(__dirname, 'index.ie.html'))
+    return
+  }
+
+  res.setHeader('Content-Type', 'text/html')
+  res.setHeader('Server', serverInfo)
 
   const handleError = err => {
     if (err.url) {
@@ -110,13 +117,12 @@ function render (req, res) {
 
     const { htmlAttrs } = context.meta.inject()
 
-    // vue-meta support
     res.send(`
-      <!DOCTYPE html>
-      <html data-vue-meta-server-rendered ${htmlAttrs.text()}>
-        ${html}
-      </html>
-    `) 
+    <!DOCTYPE html>
+    <html data-vue-meta-server-rendered ${htmlAttrs.text()}>
+      ${html}
+    </html>
+    `)
 
     if (!isProd) {
       console.log(`whole request: ${Date.now() - s}ms`)
