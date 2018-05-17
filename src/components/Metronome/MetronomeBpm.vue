@@ -82,7 +82,7 @@ export default {
       this.$emit('volChanged', v)
     }
   },
-  beforeMount () {
+  created () {
     this.lazyBpm = this.bpm
   }
 }
