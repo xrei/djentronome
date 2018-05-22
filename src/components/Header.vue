@@ -1,4 +1,4 @@
-<template>
+<template functional>
   <header class="header">
     <div class="h-inner">
       <span class="h-title">Djentronome</span>
